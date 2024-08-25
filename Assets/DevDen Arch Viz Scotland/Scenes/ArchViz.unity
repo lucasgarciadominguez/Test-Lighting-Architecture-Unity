@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 3b3df5eda11692f4da22d038854d6608,
+  m_LightingDataAsset: {fileID: 112000000, guid: 6b36f1688a3b77c4398fc04637a5db9f,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: f397db8e5fbd94145ba4be64c11b0a2e,
     type: 2}
@@ -996,6 +996,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4982428}
   m_Mesh: {fileID: 4300000, guid: 805de25975a5dea43864310560aa31a9, type: 3}
+--- !u!4 &10956399 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35fb78cdfaa7a0d43b83d29baa3325dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1197303039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &13756482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,6 +1894,7 @@ MonoBehaviour:
   m_Script: {fileID: 1357105028}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &56460608
 Transform:
   m_ObjectHideFlags: 19
@@ -3503,7 +3510,7 @@ GameObject:
   - component: {fileID: 112050686}
   - component: {fileID: 112050688}
   m_Layer: 0
-  m_Name: Reflection Probe
+  m_Name: Reflection Probe Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5857,7 +5864,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
+  m_ReceiveGI: 2
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -8657,7 +8664,7 @@ GameObject:
   - component: {fileID: 354833543}
   - component: {fileID: 354833544}
   m_Layer: 0
-  m_Name: Reflection Probe (4)
+  m_Name: Reflection Probe Bath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10084,7 +10091,7 @@ GameObject:
   - component: {fileID: 434679564}
   - component: {fileID: 434679565}
   m_Layer: 0
-  m_Name: Reflection Probe
+  m_Name: Reflection Probe Bath Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10169,8 +10176,8 @@ MonoBehaviour:
     influence:
       m_Shape: 0
       m_BoxSize: {x: 0.78456306, y: 1.238049, z: 0.7067852}
-      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistancePositive: {x: 0.20031297, y: 0.20031297, z: 0.20031297}
+      m_BoxBlendDistanceNegative: {x: 0.20031297, y: 0.20031297, z: 0.20031297}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -12735,6 +12742,7 @@ MonoBehaviour:
   m_Script: {fileID: 1563797700}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &549481025
 Transform:
   m_ObjectHideFlags: 19
@@ -13859,6 +13867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 643286519}
+  - component: {fileID: 643286520}
   m_Layer: 0
   m_Name: Lights
   m_TagString: Untagged
@@ -13894,6 +13903,18 @@ Transform:
   - {fileID: 1642704935}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &643286520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643286518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6a5d568ea2341f4491c054f80c18369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &655383678
 GameObject:
   m_ObjectHideFlags: 0
@@ -18779,7 +18800,7 @@ GameObject:
   - component: {fileID: 1067789872}
   - component: {fileID: 1067789874}
   m_Layer: 0
-  m_Name: Reflection Probe (1)
+  m_Name: Reflection Probe General
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18864,8 +18885,8 @@ MonoBehaviour:
     influence:
       m_Shape: 0
       m_BoxSize: {x: 14.521809, y: 3.6810646, z: 8.260841}
-      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistancePositive: {x: 1, y: 1, z: 1}
+      m_BoxBlendDistanceNegative: {x: 1, y: 1, z: 1}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -21833,7 +21854,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1654331683}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 35fb78cdfaa7a0d43b83d29baa3325dd,
         type: 3}
@@ -21853,17 +21874,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 35fb78cdfaa7a0d43b83d29baa3325dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.833
+      value: -0.6444435
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35fb78cdfaa7a0d43b83d29baa3325dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.418
+      value: 0.59081745
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35fb78cdfaa7a0d43b83d29baa3325dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.095
+      value: 0.8262284
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35fb78cdfaa7a0d43b83d29baa3325dd,
         type: 3}
@@ -21873,17 +21894,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 35fb78cdfaa7a0d43b83d29baa3325dd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35fb78cdfaa7a0d43b83d29baa3325dd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35fb78cdfaa7a0d43b83d29baa3325dd,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 35fb78cdfaa7a0d43b83d29baa3325dd,
         type: 3}
@@ -22243,8 +22264,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1254792658}
+  - component: {fileID: 1254792659}
+  - component: {fileID: 1254792660}
   m_Layer: 0
-  m_Name: SwitchingLights
+  m_Name: ManagerCycleDayAndNight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22265,6 +22288,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1254792659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254792657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3696e033689e44bba78c54b9be19dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  l_light: []
+  l_dir: []
+  reflectionProbes:
+  - {fileID: 434679564}
+  - {fileID: 1067789872}
+  - {fileID: 112050686}
+  - {fileID: 1578501444}
+  - {fileID: 1669495838}
+  - {fileID: 354833543}
+  - {fileID: 2097896725}
+  - {fileID: 1338920180}
+  reflectionProbes2: []
+  textures:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  mirrorMat: {fileID: 2100000, guid: 7ddcf91acb54342419dd991d9086774e, type: 2}
+--- !u!114 &1254792660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254792657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e0ca1546d8bc044a8fb6b322961a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightingSceneDataDay: {fileID: 11400000, guid: 42afc85ca89f16e47b4246cac3d918ca,
+    type: 2}
+  lightingSceneDataNight: {fileID: 11400000, guid: 7f15cf0cd7afe014694b312b729d6d21,
+    type: 2}
+  lightmapSwitch: {fileID: 1254792659}
+  volumeSwitch: {fileID: 6423477070483684870}
+  lightsSwitch: {fileID: 643286520}
 --- !u!1 &1256188850
 GameObject:
   m_ObjectHideFlags: 0
@@ -29006,7 +29082,7 @@ GameObject:
   - component: {fileID: 1338920180}
   - component: {fileID: 1338920181}
   m_Layer: 0
-  m_Name: Reflection Probe (6)
+  m_Name: Reflection Probe Kitchen Large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29091,8 +29167,8 @@ MonoBehaviour:
     influence:
       m_Shape: 0
       m_BoxSize: {x: 8.522632, y: 3.6810646, z: 3.9862347}
-      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistancePositive: {x: 1, y: 1, z: 1}
+      m_BoxBlendDistanceNegative: {x: 1, y: 1, z: 1}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -38034,7 +38110,7 @@ GameObject:
   - component: {fileID: 1578501444}
   - component: {fileID: 1578501445}
   m_Layer: 0
-  m_Name: Reflection Probe (2)
+  m_Name: Reflection Probe Bedroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38081,7 +38157,7 @@ ReflectionProbe:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IntensityMultiplier: 1
-  m_BlendDistance: 1
+  m_BlendDistance: 0
   m_HDR: 1
   m_BoxProjection: 0
   m_RenderDynamicObjects: 0
@@ -38119,8 +38195,8 @@ MonoBehaviour:
     influence:
       m_Shape: 0
       m_BoxSize: {x: 5.62069, y: 3.8078146, z: 5.1627274}
-      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistancePositive: {x: 1, y: 1, z: 1}
+      m_BoxBlendDistanceNegative: {x: 1, y: 1, z: 1}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -38280,7 +38356,7 @@ MonoBehaviour:
     camera:
       camera: 0
   m_ProxyVolume: {fileID: 0}
-  m_BakedTexture: {fileID: 8900000, guid: 2274d7ff4c2c5d549a865f7146339302, type: 3}
+  m_BakedTexture: {fileID: 8900000, guid: b0c9e7a903a401c4e993a8db297f7ffe, type: 3}
   m_CustomTexture: {fileID: 0}
   m_BakedRenderData:
     m_WorldToCameraRHS:
@@ -39656,6 +39732,7 @@ Transform:
   - {fileID: 2014058740}
   - {fileID: 1453053870}
   - {fileID: 1893716762}
+  - {fileID: 10956399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1658122548
@@ -39753,7 +39830,7 @@ GameObject:
   - component: {fileID: 1669495838}
   - component: {fileID: 1669495839}
   m_Layer: 0
-  m_Name: Reflection Probe (3)
+  m_Name: Reflection Probe Studio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39838,8 +39915,8 @@ MonoBehaviour:
     influence:
       m_Shape: 0
       m_BoxSize: {x: 3.4664402, y: 3.6810646, z: 2.6857271}
-      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistancePositive: {x: 1, y: 1, z: 1}
+      m_BoxBlendDistanceNegative: {x: 1, y: 1, z: 1}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -57168,12 +57245,12 @@ PrefabInstance:
     - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 36
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_Lens.m_SensorSize.y
-      value: 24
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -57771,7 +57848,7 @@ GameObject:
   - component: {fileID: 2097896725}
   - component: {fileID: 2097896726}
   m_Layer: 0
-  m_Name: Reflection Probe (5)
+  m_Name: Reflection Probe Living Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57856,8 +57933,8 @@ MonoBehaviour:
     influence:
       m_Shape: 0
       m_BoxSize: {x: 4.6108437, y: 3.6810646, z: 4.1318855}
-      m_BoxBlendDistancePositive: {x: 0, y: 0, z: 0}
-      m_BoxBlendDistanceNegative: {x: 0, y: 0, z: 0}
+      m_BoxBlendDistancePositive: {x: 1, y: 1, z: 1}
+      m_BoxBlendDistanceNegative: {x: 1, y: 1, z: 1}
       m_BoxBlendNormalDistancePositive: {x: 0, y: 0, z: 0}
       m_BoxBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
       m_BoxSideFadePositive: {x: 1, y: 1, z: 1}
@@ -69071,6 +69148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6423477070483684869}
   - component: {fileID: 1168228386582823347}
+  - component: {fileID: 6423477070483684870}
   m_Layer: 0
   m_Name: Sky and Fog Volume
   m_TagString: Untagged
@@ -69270,6 +69348,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3407182204407273656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6423477070483684870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000059736916656837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dd321f331f50a94bb5ccbfdcb5dd25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6610221523862841518
 GameObject:
   m_ObjectHideFlags: 0
@@ -72363,6 +72453,5 @@ SceneRoots:
   - {fileID: 7413048}
   - {fileID: 56460608}
   - {fileID: 873932313}
-  - {fileID: 1197303039}
   - {fileID: 1398480495}
   - {fileID: 1254792658}
