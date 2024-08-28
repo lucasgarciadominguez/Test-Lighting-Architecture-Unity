@@ -12,7 +12,6 @@ public class LightsSwitchTool : MonoBehaviour
         lights = new List<Light>();
         foreach (Transform child in transform)
         {
-            Debug.Log("Child Object: " + child.gameObject.name);
             lights.Add(child.gameObject.GetComponent<Light>());
             // Aquí puedes hacer lo que necesites con cada hijo.
         }

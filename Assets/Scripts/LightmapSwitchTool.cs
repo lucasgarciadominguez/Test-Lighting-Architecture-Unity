@@ -35,7 +35,6 @@ public class LightmapSwitchTool : MonoBehaviour
             textures[i] = reflectionProbes2[i].bakedTexture;
 
         }
-
     }
 
     public void ChangeLightmaps(Texture2D _dir, Texture2D _light)
@@ -97,7 +96,7 @@ public class LightmapSwitchTool : MonoBehaviour
             reflectionProbes2[i].mode=ProbeSettings.Mode.Custom;
             //textures[i] = reflectionProbes[i].bakedTexture;
             //reflectionProbes[i].gameObject.SetActive(false);
-            Debug.Log($"Reflection Probe {i} Texture: {reflectionProbes[i].customBakedTexture.name}");
+            Debug.Log($"{reflectionProbes[i].name} Texture: {reflectionProbes[i].customBakedTexture.name}");
 
         }
         // Forzar la actualización del entorno global

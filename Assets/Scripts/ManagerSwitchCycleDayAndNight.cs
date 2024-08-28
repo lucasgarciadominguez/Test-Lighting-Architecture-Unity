@@ -21,6 +21,7 @@ public class ManagerSwitchCycleDayAndNight : MonoBehaviour
     private void Start()
     {
         //lightmapSwitch.ChangeReflectionProbes(lightingSceneDataNight.cubemaps);
+        //lightmapSwitch.ChangeReflectionProbes(lightingSceneDataDay.cubemaps);
 
     }
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class ManagerSwitchCycleDayAndNight : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if (!changeVar)
+            if (changeVar)
             {
                 lightmapSwitch.ChangeLightmaps(lightingSceneDataDay.l_Dir, lightingSceneDataDay.l_Light);
                 volumeSwitch.ChangeVolumeProfile(lightingSceneDataDay.profileVolume);
