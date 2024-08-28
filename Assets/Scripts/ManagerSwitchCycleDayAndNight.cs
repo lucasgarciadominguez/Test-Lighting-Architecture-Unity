@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
-
+using Michsky.MUIP;
 public class ManagerSwitchCycleDayAndNight : MonoBehaviour
 {
     [SerializeField]
@@ -16,6 +17,9 @@ public class ManagerSwitchCycleDayAndNight : MonoBehaviour
     VolumeSwitchTool volumeSwitch;  //reference to the volume tool that changes the profile of the volume
     [SerializeField]
     LightsSwitchTool lightsSwitch;  //reference to the lights tool that changes the lights color ONLY FOR REALTIME LIGHTS
+
+    [SerializeField]
+    SwitchManager buttonLight;
 
     bool changeVar = false;
     private void Start()
@@ -34,6 +38,8 @@ public class ManagerSwitchCycleDayAndNight : MonoBehaviour
                 lightmapSwitch.ChangeLightmaps(lightingSceneDataDay.l_Dir, lightingSceneDataDay.l_Light);
                 volumeSwitch.ChangeVolumeProfile(lightingSceneDataDay.profileVolume);
                 lightmapSwitch.ChangeReflectionProbes(lightingSceneDataDay.cubemaps);
+                buttonLight.AnimateSwitch();
+
                 //lightsSwitch.ChangeLights(lightingSceneDataDay.colorSkyLight);
             }
             else
@@ -41,6 +47,7 @@ public class ManagerSwitchCycleDayAndNight : MonoBehaviour
                 lightmapSwitch.ChangeLightmaps(lightingSceneDataNight.l_Dir, lightingSceneDataNight.l_Light);
                 volumeSwitch.ChangeVolumeProfile(lightingSceneDataNight.profileVolume);
                 lightmapSwitch.ChangeReflectionProbes(lightingSceneDataNight.cubemaps);
+                buttonLight.AnimateSwitch();
 
                 //lightsSwitch.ChangeLights(lightingSceneDataNight.colorSkyLight);
 
