@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class VolumeSwitchTool : MonoBehaviour
 {
-    Volume volumeScene;
+    Volume volumeScene; //volume tool reference
 
     void Start()
     {
@@ -13,7 +13,7 @@ public class VolumeSwitchTool : MonoBehaviour
     }
     public void ChangeVolumeProfile(VolumeProfile profile)
     {
-        volumeScene.profile = profile;
+        volumeScene.profile = profile;  //sets the new profile
 
     }
 }

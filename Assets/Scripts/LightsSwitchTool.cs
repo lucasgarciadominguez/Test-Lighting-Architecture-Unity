@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class LightsSwitchTool : MonoBehaviour
+public class LightsSwitchTool : MonoBehaviour   //tool for switching lights color in the scene for realtime 
 {
     List<Light> lights;
 
@@ -13,7 +13,6 @@ public class LightsSwitchTool : MonoBehaviour
         foreach (Transform child in transform)
         {
             lights.Add(child.gameObject.GetComponent<Light>());
-            // Aquí puedes hacer lo que necesites con cada hijo.
         }
 
     }
@@ -21,7 +20,7 @@ public class LightsSwitchTool : MonoBehaviour
     {
         foreach (Light child in lights)
         {
-            child.color = colorlight;
+            child.color = colorlight;   //changes all lights
         }
     }
 }

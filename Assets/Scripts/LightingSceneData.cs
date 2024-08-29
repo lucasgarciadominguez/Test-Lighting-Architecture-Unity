@@ -16,10 +16,10 @@ public class LightingSceneData : ScriptableObject
 
     [Header("Stored Reflection Probes")]
     [SerializeField]
-    public Cubemap[] cubemaps;  
+    public Cubemap[] cubemaps;
 
+    [Header("Stored Color Sky")]
     public Color colorSkyLight;
-
 
     [Header("Stored Light Probes Settings")]
     [SerializeField]

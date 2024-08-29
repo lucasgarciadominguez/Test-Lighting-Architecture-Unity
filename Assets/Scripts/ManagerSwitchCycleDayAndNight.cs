@@ -22,25 +22,18 @@ public class ManagerSwitchCycleDayAndNight : MonoBehaviour
     SwitchManager buttonLight;
 
     bool changeVar = false;
-    private void Start()
-    {
-        //lightmapSwitch.ChangeReflectionProbes(lightingSceneDataNight.cubemaps);
-        //lightmapSwitch.ChangeReflectionProbes(lightingSceneDataDay.cubemaps);
 
-    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C))    //simple but effective method for input
         {
             if (changeVar)
             {
-                lightmapSwitch.ChangeLightmaps(lightingSceneDataDay.l_Dir, lightingSceneDataDay.l_Light);
-                volumeSwitch.ChangeVolumeProfile(lightingSceneDataDay.profileVolume);
-                lightmapSwitch.ChangeReflectionProbes(lightingSceneDataDay.cubemaps);
-                buttonLight.AnimateSwitch();
-
-                //lightsSwitch.ChangeLights(lightingSceneDataDay.colorSkyLight);
+                lightmapSwitch.ChangeLightmaps(lightingSceneDataDay.l_Dir, lightingSceneDataDay.l_Light);   //uses new lightmaps textures
+                volumeSwitch.ChangeVolumeProfile(lightingSceneDataDay.profileVolume);   //sets new profile volume
+                lightmapSwitch.ChangeReflectionProbes(lightingSceneDataDay.cubemaps);   //sets new reflection probes cubemaps (textures)
+                buttonLight.AnimateSwitch();    //animates the UI
             }
             else
             {
@@ -48,9 +41,6 @@ public class ManagerSwitchCycleDayAndNight : MonoBehaviour
                 volumeSwitch.ChangeVolumeProfile(lightingSceneDataNight.profileVolume);
                 lightmapSwitch.ChangeReflectionProbes(lightingSceneDataNight.cubemaps);
                 buttonLight.AnimateSwitch();
-
-                //lightsSwitch.ChangeLights(lightingSceneDataNight.colorSkyLight);
-
             }
 
             changeVar =!changeVar;

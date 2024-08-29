@@ -15,45 +15,37 @@ public class LightmapSwitchTool : MonoBehaviour
     [SerializeField]
     private ReflectionProbe[] reflectionProbes;
     [SerializeField]
-    private HDAdditionalReflectionData[] reflectionProbes2;
-    [SerializeField]
-    private Texture[] textures;
-    [SerializeField]
-    Material mirrorMat;
+    private HDAdditionalReflectionData[] reflectionData;
+
     void Start()
     {
-        //Calls for the additional lightmaps to be added to the loaded scene
-        //SetupLightmaps();
         foreach (ReflectionProbe reflectionProbe in reflectionProbes)
         { 
-            reflectionProbe.mode = ReflectionProbeMode.Custom;
+            reflectionProbe.mode = ReflectionProbeMode.Custom;  //makes the reflection, custom
         }
-        reflectionProbes2=new HDAdditionalReflectionData[reflectionProbes.Length];
+        reflectionData=new HDAdditionalReflectionData[reflectionProbes.Length];
         for (int i = 0; i < reflectionProbes.Length; i++)
         {
-            reflectionProbes2[i] = reflectionProbes[i].gameObject.GetComponent<HDAdditionalReflectionData>();
-            textures[i] = reflectionProbes2[i].bakedTexture;
-
+            reflectionData[i] = reflectionProbes[i].gameObject.GetComponent<HDAdditionalReflectionData>();
         }
     }
 
     public void ChangeLightmaps(Texture2D _dir, Texture2D _light)
     {
-        // Limpiar el array de lightmaps existente
+       
         LightmapSettings.lightmaps = new LightmapData[0];
 
-        // Crear un nuevo array de LightmapData con el tamaño adecuado
-        LightmapData[] lightmaparray = new LightmapData[1]; // Puedes ajustar el tamaño si es necesario
-        LightmapData mapdata = new LightmapData(); // Crear una nueva instancia para cada lightmap
+        // Creates a lightmap data array
+        LightmapData[] lightmaparray = new LightmapData[1]; 
+        LightmapData mapdata = new LightmapData(); 
 
-        // Asignar las texturas
         mapdata.lightmapDir = _dir;
         mapdata.lightmapColor = _light;
 
-        // Asignar la nueva instancia al array
+        // Asign the new instance to the array
         lightmaparray[0] = mapdata;
 
-        // Asignar el array actualizado a LightmapSettings
+        // Assign the lightmaps to the LightmapSettings
         LightmapSettings.lightmaps = lightmaparray;
 
         Debug.Log("Lightmaps updated and previous lightmaps cleared.");
@@ -92,17 +84,15 @@ public class LightmapSwitchTool : MonoBehaviour
             //reflectionProbes[i].mode = ReflectionProbeMode.Custom;
 
             reflectionProbes[i].customBakedTexture = cubemaps[i];
-            reflectionProbes2[i].SetTexture(ProbeSettings.Mode.Custom, cubemaps[i]);
-            reflectionProbes2[i].mode=ProbeSettings.Mode.Custom;
+            reflectionData[i].SetTexture(ProbeSettings.Mode.Custom, cubemaps[i]);
+            reflectionData[i].mode=ProbeSettings.Mode.Custom;
             //textures[i] = reflectionProbes[i].bakedTexture;
             //reflectionProbes[i].gameObject.SetActive(false);
             Debug.Log($"{reflectionProbes[i].name} Texture: {reflectionProbes[i].customBakedTexture.name}");
 
         }
-        // Forzar la actualización del entorno global
+        // Forces the update
         DynamicGI.UpdateEnvironment();
 
-        // Reasigna la textura cúbica manualmente al material del espejo si aplica
-        //mirrorMat.SetTexture("_Cube", reflectionProbes[4].bakedTexture);
     }
 }
