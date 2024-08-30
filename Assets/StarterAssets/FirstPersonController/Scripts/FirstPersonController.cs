@@ -73,8 +73,14 @@ namespace StarterAssets
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
-
-		private bool IsCurrentDeviceMouse
+		[SerializeField]
+        LayerMask layerMaskInteractiveObject;
+        [SerializeField]
+        Animator animatorTextInteract;
+        [SerializeField]
+        Animator windowManagerAlt;
+        bool lockPlayer=false;
+        private bool IsCurrentDeviceMouse
 		{
 			get
 			{
@@ -112,17 +118,54 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			//JumpAndGravity();
+			//JumpAndGravity();	//disabled for this project
 			GroundedCheck();
-			Move();
-		}
+			if (!lockPlayer)
+			{
+                Move();
+				CheckGameObjectsSelectable();
+
+            }
+        }
 
 		private void LateUpdate()
 		{
-			CameraRotation();
+            if (!lockPlayer)
+                CameraRotation();
 		}
+		void CheckGameObjectsSelectable()
+		{
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-		private void GroundedCheck()
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMaskInteractiveObject))
+            {
+                //show message through ui "e to interact"
+                Debug.Log("can interact");
+                animatorTextInteract.SetBool("Appear", true);
+
+                if (Input.GetKeyDown(KeyCode.E))	//if selected, appear the ChangeMaterial UI
+                {
+                    animatorTextInteract.SetBool("Appear", false);
+                    windowManagerAlt.SetBool("Appear", true);
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.visible = true;
+                    lockPlayer = true;
+                }
+            }
+            else
+            {
+                animatorTextInteract.SetBool("Appear", false);
+            }
+        }
+        public void SelectAndClose()    //selects the new material and closes the UI
+        {
+            windowManagerAlt.SetBool("Appear", false);
+            Cursor.visible = false;
+            lockPlayer = false;
+        }
+
+        private void GroundedCheck()
 		{
 			// set sphere position, with offset
 			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
@@ -246,7 +289,8 @@ namespace StarterAssets
 			}
 		}
 
-		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
+
+        private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
 			if (lfAngle < -360f) lfAngle += 360f;
 			if (lfAngle > 360f) lfAngle -= 360f;
