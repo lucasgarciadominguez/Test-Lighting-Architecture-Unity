@@ -2,7 +2,7 @@
 
 Virtual Tour in Unity that allows seamless transitions between day and night. I focused on creating baked lighting and reflections, using an optimized lightmap system to ensure smooth and realistic shifts without any performance drops.
 
-## <a href="[https://www.youtube.com/watch?v=UNz9k9E9IWM](https://youtu.be/nvwkQ3SBaBI?si=cIAiuDeKLZDtka_2)"> Demo Video on YouTube </a>
+## <a href="https://www.youtube.com/watch?v=nvwkQ3SBaBI"> Demo Video on YouTube </a>
 
 <img src="https://github.com/lucasgarciadominguez/Assets/blob/main/ArchitectureViewer.PNG" width="800">
 
